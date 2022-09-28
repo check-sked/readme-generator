@@ -16,7 +16,7 @@ const questions = [
         default: 'Project Title',
         validate: function (answer) {
             if (answer.length < 1) {
-                return console.log("A valid project title is required.");
+                return console.log("A project title is needed.");
             }
             return true;
         }
@@ -29,7 +29,7 @@ const questions = [
         default: 'Project Description',
         validate: function (answer) {
             if (answer.length < 1) {
-                return console.log("A valid project description is required.");
+                return console.log("A project description is needed.");
             }
             return true;
         }
@@ -72,7 +72,7 @@ const questions = [
         name: 'username',
         validate: function (answer) {
             if (answer.length < 1) {
-                return console.log("A valid GitHub username is required.");
+                return console.log("A GitHub username is needed.");
             }
             return true;
         }
@@ -91,12 +91,11 @@ function writeToFile(fileName, data) {
           return console.log(err);
         }
       
-        console.log("Success! Your README.md file has been generated")
+        console.log("Your README  has been created!")
     });
 }
 
 const writeFileAsync = util.promisify(writeToFile);
-
 
 // Main function
 async function init() {
@@ -104,22 +103,18 @@ async function init() {
 
         // Prompt Inquirer questions
         const userResponses = await inquirer.prompt(questions);
-        console.log("Your responses: ", userResponses);
-        console.log("Thank you for your responses! Fetching your GitHub data next...");
     
         // Github api call
         const userInfo = await api.getUser(userResponses);
-        console.log("Your GitHub user info: ", userInfo);
     
         // Inquirer questions to Github api
-        console.log("Generating your README next...")
         const markdown = generateMarkdown(userResponses, userInfo);
-        console.log(markdown);
     
         // make markdown a file
         await writeFileAsync('ExampleREADME.md', markdown);
 
     } catch (error) {
+        // make error visible
         console.log(error);
     }
 };

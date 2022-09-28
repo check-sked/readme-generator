@@ -20,7 +20,7 @@ function generateMarkdown(userResponses, userInfo) {
   `# ${userResponses.title}
 
   
-  ![GitHub license](https://img.shields.io/badge/license-${userResponses.license.trim()}-blue.svg)
+  ![License](https://img.shields.io/badge/license-${userResponses.license.trim()}-blue.svg)
 
 
   ## Description 
@@ -45,7 +45,7 @@ function generateMarkdown(userResponses, userInfo) {
   
   ## Installation
   
-  *Steps required to install project and how to get the development environment running:*
+  *Instructions for installation project and setting up the development environment:*
   
   ${userResponses.installation}`
   };
@@ -60,11 +60,10 @@ function generateMarkdown(userResponses, userInfo) {
   
   ## Usage 
   
-  *Instructions and examples for use:*
+  *How to use the application:*
   
   ${userResponses.usage}`
   };
-  
   
   // contr. section
   if (userResponses.contributing !== '') {
@@ -75,11 +74,10 @@ function generateMarkdown(userResponses, userInfo) {
 
   ## Contributing
   
-  *If you would like to contribute it, you can follow these guidelines for how to do so.*
+  *Take the following steps to contribute to the project.*
   
   ${userResponses.contributing}`
   };
-  
 
   // test section
   if (userResponses.tests !== '') {
@@ -89,11 +87,10 @@ function generateMarkdown(userResponses, userInfo) {
   
   ## Tests
   
-  *Tests for application and how to run them:*
+  *Tests for application and how they can be used:*
   
   ${userResponses.tests}`
   };
-
 
   // license section
   draftMarkdown +=
@@ -103,7 +100,6 @@ function generateMarkdown(userResponses, userInfo) {
   
   ${userResponses.license}
   `;
-
 
   // questions and contact
   let draftDev = 
