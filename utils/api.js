@@ -9,6 +9,7 @@ const api = {
         return response.data;
 
       } catch (error) {
+        // make error visible
         console.log(error);
       }
   }
