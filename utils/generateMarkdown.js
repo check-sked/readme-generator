@@ -112,20 +112,19 @@ function generateMarkdown(userResponses, userInfo) {
   
   ## Questions?
   
-  Got questions? Reach me through the following channels:
+  Got questions? Reach me through the following channels or at my email above:
  
   GitHub: [@${userInfo.login}](${userInfo.url})
   `;
 
-  // email through Github
-  if (userInfo.email !== null) {
-  
-  draftDev +=
+  // email section
+  draftMarkdown +=
   `
-
-  Email: ${userInfo.email}
-
-  `};
+  
+  ## Email
+  
+  ${userResponses.email}
+  `;
 
   // Add developer info
   draftMarkdown += draftDev;
