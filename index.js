@@ -7,7 +7,7 @@ const util = require('util');
 const api = require('./utils/api.js');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// Inquirer questions
+// inquirer questions
 const questions = [
     {
         type: 'input',
@@ -21,7 +21,7 @@ const questions = [
             return true;
         }
     },
-    
+
     {
         type: 'input',
         message: "Give your project a description.",
@@ -107,16 +107,16 @@ async function init() {
         console.log("Your responses: ", userResponses);
         console.log("Thank you for your responses! Fetching your GitHub data next...");
     
-        // Call GitHub api for user info
+        // Github api call
         const userInfo = await api.getUser(userResponses);
         console.log("Your GitHub user info: ", userInfo);
     
-        // Pass Inquirer userResponses and GitHub userInfo to generateMarkdown
+        // Inquirer questions to Github api
         console.log("Generating your README next...")
         const markdown = generateMarkdown(userResponses, userInfo);
         console.log(markdown);
     
-        // Write markdown to file
+        // make markdown a file
         await writeFileAsync('ExampleREADME.md', markdown);
 
     } catch (error) {
