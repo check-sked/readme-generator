@@ -1,39 +1,17 @@
-// External packages
+// packages
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 
-// Internal modules
+// modules
 const api = require('./utils/api.js');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// Inquirer prompts for userResponses
+// Inquirer questions
 const questions = [
     {
         type: 'input',
-        message: "What is your GitHub username? (No @ needed)",
-        name: 'username',
-        validate: function (answer) {
-            if (answer.length < 1) {
-                return console.log("A valid GitHub username is required.");
-            }
-            return true;
-        }
-    },
-    {
-        type: 'input',
-        message: "What is the name of your GitHub repo?",
-        name: 'repo',
-        validate: function (answer) {
-            if (answer.length < 1) {
-                return console.log("A valid GitHub repo is required for a badge.");
-            }
-            return true;
-        }
-    },
-    {
-        type: 'input',
-        message: "What is the title of your project?",
+        message: "What is the name of your Github project?",
         name: 'title',
         default: 'Project Title',
         validate: function (answer) {
@@ -43,9 +21,10 @@ const questions = [
             return true;
         }
     },
+    
     {
         type: 'input',
-        message: "Write a description of your project.",
+        message: "Give your project a description.",
         name: 'description',
         default: 'Project Description',
         validate: function (answer) {
@@ -55,32 +34,50 @@ const questions = [
             return true;
         }
     },
+
     {
         type: 'input',
-        message: "If applicable, describe the steps required to install your project for the Installation section.",
+        message: "How can users install your project?",
         name: 'installation'
     },
+
     {
         type: 'input',
-        message: "Provide instructions and examples of your project in use for the Usage section.",
+        message: "How can users use your application?",
         name: 'usage'
     },
+
     {
         type: 'input',
-        message: "If applicable, provide guidelines on how other developers can contribute to your project.",
+        message: "How can other developers contribute to your application?",
         name: 'contributing'
     },
+
     {
         type: 'input',
-        message: "If applicable, provide any tests written for your application and provide examples on how to run them.",
+        message: "Are there any tests for your application? Provide them here and how to use them if so.",
         name: 'tests'
     },
+
     {
         type: 'list',
-        message: "Choose a license for your project.",
+        message: "Project license?",
         choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT', 'Boost Software License 1.0', 'The Unlicense'],
         name: 'license'
     },
+
+    {
+        type: 'input',
+        message: "What is your GitHub username? Exclude the @",
+        name: 'username',
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log("A valid GitHub username is required.");
+            }
+            return true;
+        }
+    },
+
     {
         type: 'input',
         message: "What is your email?",
