@@ -97,10 +97,9 @@ function writeToFile(fileName, data) {
 
 const writeFileAsync = util.promisify(writeToFile);
 
-// Main function
+// main function
 async function init() {
     try {
-
         // Prompt Inquirer questions
         const userResponses = await inquirer.prompt(questions);
     
