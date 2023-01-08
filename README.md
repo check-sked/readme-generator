@@ -46,6 +46,8 @@ MIT
 
 ## Questions?
 
-Got questions? Reach me through the following channels or at my email above:
+Got questions? Reach me through the following channels:
 
 GitHub: [@check-sked](https://api.github.com/users/check-sked)
+
+Twitter: [@Check-Sked] (https://twitter.com/Check_Sked)
