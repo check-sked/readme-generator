@@ -4,7 +4,7 @@
 
 ## Description
 
-readme-generator is a command line application built with JavaScript designed to streamline the readme production process. It uses a fixed template and prompts that users can follow to generate a descriptive readme outlining their project.
+readme-generator is a command line application built with JavaScript designed to streamline the README production process. It uses a fixed template and prompts that users can follow to generate a descriptive readme outlining their project.
 
 ## Table of Contents
 
@@ -20,11 +20,15 @@ _Instructions for installation project and setting up the development environmen
 
 Installation for readme-generator is simple. After cloning the readme-generator project to your local computer, simply run "npm i" in the root directory.
 
+Once you have completed these steps, you can enter `node index.js` in your terminal and begin producing your README.
+
 ## Usage
 
 _How to use the application:_
 
-User can leverage the application by generating descriptive readme files.
+Users can leverage the application by generating descriptive README files, or creating a simply produced skeleton for a larger and more descriptive README.
+
+It is designed for flexibility and to save time!
 
 ## Contributing
 
