@@ -4,7 +4,7 @@
 
 ## Description
 
-readme-generator is an application designed to streamline the readme making process. It uses a fixed template and prompts that users can follow to generate a descriptive readme outlining their project.
+readme-generator is a command line application built with JavaScript designed to streamline the readme production process. It uses a fixed template and prompts that users can follow to generate a descriptive readme outlining their project.
 
 ## Table of Contents
 

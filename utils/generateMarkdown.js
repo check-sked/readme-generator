@@ -1,23 +1,29 @@
 function generateMarkdown(userResponses, userInfo) {
-
   // form table of contents
   let draftToC = `## Table of Contents`;
 
-  if (userResponses.installation !== '') { draftToC += `
-  * [Installation](#installation)` };
+  if (userResponses.installation !== "") {
+    draftToC += `
+  * [Installation](#installation)`;
+  }
 
-  if (userResponses.usage !== '') { draftToC += `
-  * [Usage](#usage)` };
+  if (userResponses.usage !== "") {
+    draftToC += `
+  * [Usage](#usage)`;
+  }
 
-  if (userResponses.contributing !== '') { draftToC += `
-  * [Contributing](#contributing)` };
+  if (userResponses.contributing !== "") {
+    draftToC += `
+  * [Contributing](#contributing)`;
+  }
 
-  if (userResponses.tests !== '') { draftToC += `
-  * [Tests](#tests)` };
+  if (userResponses.tests !== "") {
+    draftToC += `
+  * [Tests](#tests)`;
+  }
 
   // make mardown
-  let draftMarkdown = 
-  `# ${userResponses.title}
+  let draftMarkdown = `# ${userResponses.title}
 
   
   ![License](https://img.shields.io/badge/license-${userResponses.license.trim()}-blue.svg)
@@ -27,74 +33,61 @@ function generateMarkdown(userResponses, userInfo) {
   
   ${userResponses.description}
 
-  `
+  `;
 
   // include table of contents in markdown
   draftMarkdown += draftToC;
- 
+
   // include license
   draftMarkdown += `
   * [License](#license)`;
-  
 
   // installation section
-  if (userResponses.installation !== '') {
-  
-  draftMarkdown +=
-  `
+  if (userResponses.installation !== "") {
+    draftMarkdown += `
   
   ## Installation
   
   *Instructions for installation project and setting up the development environment:*
   
-  ${userResponses.installation}`
-  };
-  
+  ${userResponses.installation}`;
+  }
 
   // usage section
-  if (userResponses.usage !== '') {
-  
-  draftMarkdown +=
-  
-  `
+  if (userResponses.usage !== "") {
+    draftMarkdown += `
   
   ## Usage 
   
   *How to use the application:*
   
-  ${userResponses.usage}`
-  };
-  
-  // contr. section
-  if (userResponses.contributing !== '') {
+  ${userResponses.usage}`;
+  }
 
-  draftMarkdown +=
-    
-  `
+  // contr. section
+  if (userResponses.contributing !== "") {
+    draftMarkdown += `
 
   ## Contributing
   
   *Take the following steps to contribute to the project.*
   
-  ${userResponses.contributing}`
-  };
+  ${userResponses.contributing}`;
+  }
 
   // test section
-  if (userResponses.tests !== '') {
-  
-  draftMarkdown +=
-  `
+  if (userResponses.tests !== "") {
+    draftMarkdown += `
   
   ## Tests
   
   *Tests for application and how they can be used:*
   
-  ${userResponses.tests}`
-  };
+  ${userResponses.tests}`;
+  }
 
   // license section
-  draftMarkdown +=
-  `
+  draftMarkdown += `
   
   ## License
   
@@ -102,24 +95,18 @@ function generateMarkdown(userResponses, userInfo) {
   `;
 
   // questions and contact
-  let draftDev = 
-  `
+  let draftDev = `
   ---
   
   ## Questions?
   
-  Got questions? Reach me through the following channels or at my email above:
+  Got questions? Reach me through the following channels or at my email:
  
   GitHub: [@${userInfo.login}](${userInfo.url})
-  `;
+  
+  Twitter: [@${userResponses.twitter}](https://twitter.com/${userResponses.twitter})
 
-  // email section
-  draftMarkdown +=
-  `
-  
-  ## Email
-  
-  ${userResponses.email}
+  Email: ${userResponses.email}
   `;
 
   // Add developer info
@@ -127,7 +114,6 @@ function generateMarkdown(userResponses, userInfo) {
 
   // Return function
   return draftMarkdown;
-  
 }
 
 module.exports = generateMarkdown;
