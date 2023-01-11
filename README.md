@@ -54,4 +54,4 @@ Got questions? Reach me through the following channels:
 
 GitHub: [@check-sked](https://api.github.com/users/check-sked)
 
-Twitter: [@Check-Sked] (https://twitter.com/Check_Sked)
+Twitter: [@Check-Sked](https://twitter.com/Check_Sked)
