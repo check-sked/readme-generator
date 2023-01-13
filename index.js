@@ -63,7 +63,7 @@ const questions = [
   {
     type: "list",
     message: "Project license?",
-    choices: ["GNU", "MIT"],
+    choices: ["GNU", "MIT", "ISC"],
     name: "license",
   },
 
