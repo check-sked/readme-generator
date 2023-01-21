@@ -107,6 +107,12 @@ function generateMarkdown(userResponses, userInfo) {
   Twitter: [@${userResponses.twitter}](https://twitter.com/${userResponses.twitter})
 
   Email: ${userResponses.email}
+
+  Subscribe to my Newsletter: [Patreon](https://www.patreon.com/torusresearch)
+
+  Free Content: [Medium](https://medium.com/@resarchtorus)
+
+  <img src="./assets/pfp.png" alt="drawing" width="200"/>
   `;
 
   // Add developer info
